@@ -28,6 +28,13 @@ router.post('/', (req, res, next) => {
     });
 })
 
+router.post('/add', (req, res, next) => {
+    Post.addPost(req.body, (err, post) => {
+        if(err) console.log('err: ', err);
+            res.json({"message": "Post added successfully"});
+    });
+})
+
 router.put('/:id', (req, res, next) => {
     Post.updatePost(req.params.id, req.body, (err, post) => {
         if(err) console.log('err: ', err);

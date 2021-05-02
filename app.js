@@ -26,6 +26,8 @@ app.use(express.static(path.join(__dirname, "/client/build")))
 //route files
 const posts = require('./routes/posts');
 app.use('/posts', posts);
+const number = require('./routes/number');
+app.use('/number', number);
 
 const port = process.env.PORT || 5000;
 
